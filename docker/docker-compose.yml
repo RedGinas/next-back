@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  postgres_next:
+    container_name: postgres_container2
+    image: postgres:16.2
+    environment:
+      POSTGRES_DB: 'postgres_next'
+      POSTGRES_USER: 'admin'
+      POSTGRES_PASSWORD: '1111'
+      PGDATA: '/var/lib/postgresql_next/data/pgdata'
+    volumes:
+      - .:/var/lib/postgresql_next/data
+    ports:
+      - '5432:5432'
